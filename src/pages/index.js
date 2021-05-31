@@ -15,13 +15,22 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.Header />
+		<Components.Header height="60px" box-shadow="--m" md-box-shadow="0px 0px 0px 0px #000000">
+			<Override slot="menuOverride1" />
+		</Components.Header>
 		<Section quarkly-title="HeroSection">
 			<Section>
-				<Override slot="SectionContent" flex-direction="row" margin="0px 0px 0px 0px" width="100% border-box" />
+				<Override
+					slot="SectionContent"
+					flex-direction="row"
+					margin="0px 0px 0px 0px"
+					width="100% border-box"
+					flex-wrap="nowrap"
+					md-flex-wrap="wrap"
+				/>
 				<Section padding="24px 0 24px 0" margin="64px 0 0 0">
 					<Override slot="SectionContent" margin="0px 24px 0px 24px" />
-					<Text font="--headline2">
+					<Text font="--headline2" padding="0px 24px 0px 0px" md-padding="0px 48px 0px 0px">
 						Exclusive events, priceless{" "}
 						<Span
 							color="#F6B93B"
@@ -38,7 +47,7 @@ export default (() => {
 					<Text font="normal 300 16px/1.5 --fontFamily-sans">
 						We aim to provide you with the best experience within your budget. Our creativity and timely promised work makes us the best choice.
 					</Text>
-					<Section>
+					<Section padding="18px 0 18px 0">
 						<Override slot="SectionContent" flex-direction="row" margin="0px 0px 0px 0px" width="max-content" />
 						<Components.CustomButton border-radius="20px" height="50px" max-width="180px">
 							Book Now
