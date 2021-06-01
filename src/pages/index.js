@@ -17,6 +17,8 @@ export default (() => {
 		</Helmet>
 		<Components.Header height="60px" box-shadow="--m" md-box-shadow="0px 0px 0px 0px #000000">
 			<Override slot="menuOverride1" />
+			<Override slot="box" md-flex-direction="row" />
+			<Override slot="menu" md-display="none" />
 		</Components.Header>
 		<Section quarkly-title="HeroSection">
 			<Section>
