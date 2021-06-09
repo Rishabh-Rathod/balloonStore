@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Span, Text, Section, Image } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override, Stack } from "@quarkly/components";
+import { Override } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -15,11 +15,7 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.Header height="60px" box-shadow="--m" md-box-shadow="0px 0px 0px 0px #000000">
-			<Override slot="menuOverride1" />
-			<Override slot="box" md-flex-direction="row" />
-			<Override slot="menu" md-display="none" />
-		</Components.Header>
+		<Components.Header />
 		<Section quarkly-title="HeroSection">
 			<Section>
 				<Override
@@ -33,9 +29,11 @@ export default (() => {
 				<Section padding="24px 0 24px 0" margin="64px 0 0 0">
 					<Override slot="SectionContent" margin="0px 24px 0px 24px" />
 					<Text font="--headline2" padding="0px 24px 0px 0px" md-padding="0px 48px 0px 0px">
-						Exclusive events, priceless{" "}
+						One stop solution
+						<br />
+						for your{" "}
 						<Span
-							color="#F6B93B"
+							color="--secondary"
 							overflow-wrap="normal"
 							word-break="normal"
 							white-space="normal"
@@ -43,7 +41,7 @@ export default (() => {
 							text-overflow="clip"
 							hyphens="manual"
 						>
-							memories.
+							event.
 						</Span>
 					</Text>
 					<Text font="normal 300 16px/1.5 --fontFamily-sans">
@@ -73,16 +71,54 @@ export default (() => {
 				font="--headline2"
 				md-font="--headline2"
 				max-width="520px"
+				margin="0 auto 40px auto"
+				text-align="center"
+			>
+				Our Products
+			</Text>
+			<Components.ProductsListComp justify-content="center">
+				<Override slot="serviceItemComp" border-radius="30px">
+					<Override slot="box" border-radius="30px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" height="250px" />
+					<Override slot="text1" height="148px" text-overflow="ellipsis" overflow-y="hidden" />
+				</Override>
+			</Components.ProductsListComp>
+			<Section>
+				<Override slot="SectionContent" flex="1 1 auto" align-items="center" margin="20px 0px 0px 0px" />
+				<Components.CustomButton border-radius="20px" height="50px" max-width="180px">
+					View all Products
+				</Components.CustomButton>
+			</Section>
+		</Section>
+		<Section
+			padding="64px 0"
+			sm-padding="40px 0"
+			font="--base"
+			color="--dark"
+			quarkly-title="ServicesSection"
+		>
+			<Text
+				as="h1"
+				font="--headline2"
+				md-font="--headline2"
+				max-width="520px"
 				margin="0 auto 5px auto"
 				text-align="center"
 			>
 				Our Services
 			</Text>
-			<Stack margin-top="40px">
-				<Components.ServiceItemComp />
-			</Stack>
+			<Components.ServiceItemList justify-content="center">
+				<Override slot="serviceItemComp">
+					<Override slot="box" border-radius="30px" height="200px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" />
+					<Override slot="text1" overflow-y="hidden" height="100px" text-overflow="ellipsis" />
+				</Override>
+			</Components.ServiceItemList>
+			<Section>
+				<Override slot="SectionContent" flex="1 1 auto" align-items="center" margin="20px 0px 0px 0px" />
+				<Components.CustomButton border-radius="20px" height="50px" max-width="180px">
+					View all Services
+				</Components.CustomButton>
+			</Section>
 		</Section>
-		<Section />
 		<Components.Footer />
 		<Link
 			font={"--capture"}

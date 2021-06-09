@@ -78,7 +78,7 @@ Here you can create websites and web apps quickly, conveniently and beautifully.
 - [Updates](https://quarkly.io/updates)
 - [GitHub](https://github.com/quarkly)
 - [Twitter](https://twitter.com/quarklyapp)
-- [Spectrum](https://spectrum.chat/quarkly)
+- [Community](https://community.quarkly.io/)
 
 # 📝 License
 Licensed under the [MIT License](./LICENSE).
