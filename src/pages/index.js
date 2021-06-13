@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Span, Text, Section, Image } from "@quarkly/widgets";
+import { Theme, Link, Span, Text, Section, Image, Button } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
 import { Override } from "@quarkly/components";
@@ -78,15 +78,24 @@ export default (() => {
 			</Text>
 			<Components.ProductsListComp justify-content="center">
 				<Override slot="serviceItemComp" border-radius="30px">
-					<Override slot="box" border-radius="30px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" height="250px" />
+					<Override slot="box" border-radius="20px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072)" height="250px" />
 					<Override slot="text1" height="148px" text-overflow="ellipsis" overflow-y="hidden" />
 				</Override>
 			</Components.ProductsListComp>
-			<Section>
+			<Section border-color="rgba(0, 0, 0, 0)">
 				<Override slot="SectionContent" flex="1 1 auto" align-items="center" margin="20px 0px 0px 0px" />
-				<Components.CustomButton border-radius="20px" height="50px" max-width="180px">
-					View all Products
-				</Components.CustomButton>
+				<Button
+					flex="1 1 auto"
+					border-radius="20px"
+					height="50px"
+					max-width="180px"
+					type="button"
+					padding="0 0x 0 0"
+				>
+					<Link border-color="rgba(247, 251, 255, 0)" color="--light" href="#">
+						View all Products
+					</Link>
+				</Button>
 			</Section>
 		</Section>
 		<Section
@@ -108,7 +117,7 @@ export default (() => {
 			</Text>
 			<Components.ServiceItemList justify-content="center">
 				<Override slot="serviceItemComp">
-					<Override slot="box" border-radius="30px" height="200px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" />
+					<Override slot="box" border-radius="20px" height="200px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" />
 					<Override slot="text1" overflow-y="hidden" height="100px" text-overflow="ellipsis" />
 				</Override>
 			</Components.ServiceItemList>

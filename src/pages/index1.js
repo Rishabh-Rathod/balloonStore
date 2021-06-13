@@ -1,9 +1,10 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Link, Image, Box, Section } from "@quarkly/widgets";
+import { Theme, Link, Text, Input, Section } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override, Menu } from "@quarkly/components";
+import { Override } from "@quarkly/components";
+import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
 		<GlobalQuarklyPageStyles pageUrl={"index1"} />
@@ -14,30 +15,49 @@ export default (() => {
 			<meta name={"description"} content={"Web site created using quarkly.io"} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Section>
-			<Box
-				display="flex"
-				padding="12px 0"
-				justify-content="space-between"
-				align-items="center"
-				flex-direction="row"
-				md-flex-direction="column"
+		<Components.Header />
+		<Section sm-padding="40px 0" font="--base" color="--dark">
+			<Text
+				as="h1"
+				font="--headline1"
+				md-font="--headline2"
+				max-width="520px"
+				margin="0 auto 5px auto"
+				text-align="center"
 			>
-				<Image width="180px" height="32px" src="https://uploads.quarkly.io/60b3dbd28139c3001e127033/images/BalloonStore.svg?v=2021-05-30T19:47:13.285Z" />
-				<Menu
-					display="flex"
-					justify-content="center"
-					font="--base"
-					font-weight="700"
-					md-flex-direction="column"
-					md-align-items="center"
-				>
-					<Override slot="link" text-decoration="none" color="--dark" padding="6px 12px" />
-					<Override slot="link-active" color="--primary" />
-					<Override slot="item" padding="6px" />
-				</Menu>
-			</Box>
+				Our Products
+			</Text>
+			<Text
+				as="p"
+				color="--grey"
+				max-width="520px"
+				margin="0 auto"
+				text-align="center"
+				font="--lead"
+			>
+				Checkout list of our products for all sort of events.
+			</Text>
+			<Section margin="60px 0 0 0">
+				<Override slot="SectionContent" align-items="center" />
+				<Input
+					width="50%"
+					border-radius="20px"
+					placeholder="Search Products"
+					type="search"
+					required={false}
+					name="search"
+				/>
+			</Section>
+			<Section padding="32px 0 32px 0" sm-padding="40px 0" font="--base" color="--dark">
+				<Override slot="SectionContent" align-items="center" justify-content="center" />
+				<Components.ProductStack margin="40px 0px -16px 0px">
+					<Override slot="productItem">
+						<Override slot="text1" display="flex" text-overflow="ellipsis" overflow-y="hidden" />
+					</Override>
+				</Components.ProductStack>
+			</Section>
 		</Section>
+		<Components.Footer />
 		<Link
 			font={"--capture"}
 			font-size={"10px"}
