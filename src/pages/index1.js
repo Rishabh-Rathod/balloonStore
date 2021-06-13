@@ -3,7 +3,7 @@ import theme from "theme";
 import { Theme, Link, Text, Input, Section } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import { GlobalQuarklyPageStyles } from "global-page-styles";
-import { Override } from "@quarkly/components";
+import { Override, StackItem } from "@quarkly/components";
 import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
@@ -51,13 +51,16 @@ export default (() => {
 			<Section padding="32px 0 32px 0" sm-padding="40px 0" font="--base" color="--dark">
 				<Override slot="SectionContent" align-items="center" justify-content="center" />
 				<Components.ProductStack margin="40px 0px -16px 0px">
-					<Override slot="productItem">
+					<Override slot="productItem" width="292px">
 						<Override slot="text1" display="flex" text-overflow="ellipsis" overflow-y="hidden" />
 					</Override>
 				</Components.ProductStack>
 			</Section>
 		</Section>
 		<Components.Footer />
+		<StackItem width="25%" lg-width="50%" sm-width="100%" quarkly-title="ServiceItem">
+			<Override slot="StackItemContent" flex-direction="column" />
+		</StackItem>
 		<Link
 			font={"--capture"}
 			font-size={"10px"}

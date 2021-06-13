@@ -148,23 +148,14 @@ const ProductStack = props => {
 	}, [setProducts]);
 	return <Stack {...rest}>
 		{products.map(productObj => {
-			const imagePropsParent = override("image");
-			imagePropsParent.props = { ...imagePropsParent.props,
-				src: productObj.product_img_link
-			};
-			const namePropsParent = override("name");
-			namePropsParent.props = { ...namePropsParent.props,
-				src: productObj.product_img_link
-			};
-			const descPropsParent = override("desc");
-			descPropsParent.props = { ...descPropsParent.props,
-				src: productObj.product_img_link
-			};
-			return <ProductItem key={productObj.id} {...override("productItem")}>
-				<Override {...imagePropsParent} />
-				<Override {...namePropsParent} />
-				<Override {...descPropsParent} />
-			</ProductItem>;
+			console.log({
+				productObj
+			});
+			return <ProductItem key={productObj.id} {...override("productItem")} product={{
+				imageSrc: productObj.product_img_link,
+				name: productObj.product_name,
+				desc: productObj.product_desp
+			}}></ProductItem>;
 		})}
 	</Stack>;
 };
