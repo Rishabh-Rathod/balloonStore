@@ -128,7 +128,11 @@ export default (() => {
 				</Components.CustomButton>
 			</Section>
 		</Section>
-		<Components.Footer />
+		<Components.Footer>
+			<Override slot="link">
+				hello@spadeevent.com
+			</Override>
+		</Components.Footer>
 		<Link
 			font={"--capture"}
 			font-size={"10px"}
