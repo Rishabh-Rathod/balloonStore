@@ -43,20 +43,31 @@ const ProductItem = props => {
 		children,
 		rest
 	} = useOverrides(props, overrides, defaultProps);
-	
-	const { product = {} } = props
-	const { name, desc, imageSrc } = product
-	console.log({product});
+	const {
+		product = {}
+	} = props;
+	const {
+		name,
+		desc,
+		imageSrc
+	} = product;
+	console.log({
+		product
+	});
 	const namePropsParent = override("text");
-	namePropsParent.props = { ...namePropsParent.props };
+	namePropsParent.props = { ...namePropsParent.props
+	};
 	const descPropsParent = override("text1");
-	descPropsParent.props = { ...descPropsParent.props};
-		
-	
+	descPropsParent.props = { ...descPropsParent.props
+	};
 	return <Box {...rest}>
-		<Image {...override("image")}  src={imageSrc}  />
-		<Text {...namePropsParent}>{name}</Text>
-		<Text {...descPropsParent}>{desc}</Text>
+		<Image {...override("image")} src={imageSrc} />
+		<Text {...namePropsParent}>
+			{name}
+		</Text>
+		<Text {...descPropsParent}>
+			{desc}
+		</Text>
 		{children}
 	</Box>;
 };

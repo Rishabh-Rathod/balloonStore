@@ -19,12 +19,24 @@ export default {
 		"60b3dbd28139c3001e127038": {
 			"id": "60b3dbd28139c3001e127038",
 			"name": "Home",
-			"pageUrl": "index"
+			"pageUrl": "index",
+			"seo": {
+				"title": "Balloon Store | Home",
+				"description": "One-stop solution for your event.",
+				"og:description": "One-stop solution for your event.",
+				"og:title": "Balloon Store | Home"
+			}
 		},
 		"60b3ec348139c3001e12704a": {
 			"id": "60b3ec348139c3001e12704a",
-			"pageUrl": "index1",
-			"name": "Products"
+			"pageUrl": "products",
+			"name": "Products",
+			"seo": {
+				"title": "Balloon Store | Products",
+				"description": "Check out the list of best products for your events at the balloon store.",
+				"og:title": "Balloon Store | Products",
+				"og:description": "Check out the list of best products for your events at the balloon store."
+			}
 		},
 		"60b3ec69542aaa001f921759": {
 			"id": "60b3ec69542aaa001f921759",

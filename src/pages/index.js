@@ -10,9 +10,11 @@ export default (() => {
 		<GlobalQuarklyPageStyles pageUrl={"index"} />
 		<Helmet>
 			<title>
-				Quarkly export
+				Balloon Store | Home
 			</title>
-			<meta name={"description"} content={"Web site created using quarkly.io"} />
+			<meta name={"description"} content={"One-stop solution for your event."} />
+			<meta property={"og:title"} content={"Balloon Store | Home"} />
+			<meta property={"og:description"} content={"One-stop solution for your event."} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
 		<Components.Header />
@@ -80,6 +82,8 @@ export default (() => {
 				<Override slot="serviceItemComp" border-radius="30px">
 					<Override slot="box" border-radius="20px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072)" height="250px" />
 					<Override slot="text1" height="148px" text-overflow="ellipsis" overflow-y="hidden" />
+					<Override slot="text" />
+					<Override slot="desc" height="135px" overflow-y="hidden" />
 				</Override>
 			</Components.ProductsListComp>
 			<Section border-color="rgba(0, 0, 0, 0)">
@@ -92,7 +96,7 @@ export default (() => {
 					type="button"
 					padding="0 0x 0 0"
 				>
-					<Link border-color="rgba(247, 251, 255, 0)" color="--light" href="#">
+					<Link border-color="rgba(247, 251, 255, 0)" color="--light" href="/products">
 						View all Products
 					</Link>
 				</Button>
@@ -104,6 +108,7 @@ export default (() => {
 			font="--base"
 			color="--dark"
 			quarkly-title="ServicesSection"
+			display="none"
 		>
 			<Text
 				as="h1"
@@ -119,6 +124,7 @@ export default (() => {
 				<Override slot="serviceItemComp">
 					<Override slot="box" border-radius="20px" height="200px" box-shadow="0 0px 5.3px rgba(0, 0, 0, 0.048),   0 0px 17.9px rgba(0, 0, 0, 0.072),   0 0px 80px rgba(0, 0, 0, 0.12) ;" />
 					<Override slot="text1" overflow-y="hidden" height="100px" text-overflow="ellipsis" />
+					<Override slot="desc" height="120px" overflow-y="hidden" />
 				</Override>
 			</Components.ServiceItemList>
 			<Section>

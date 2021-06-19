@@ -4,7 +4,16 @@ import ServiceItemComp from "./ServiceItemComp";
 const defaultProps = {
 	"margin-top": "40px"
 };
-const services = [{}, {}, {}];
+const services = [{
+	title: 'ONE',
+	desc: 'desc ONE'
+}, {
+	title: 'TWO',
+	desc: 'desc ONE'
+}, {
+	title: 'ONE',
+	desc: 'desc ONE'
+}];
 const overrides = {
 	"serviceItemComp": {
 		"kind": "ServiceItemComp",
@@ -19,8 +28,8 @@ const ServiceItemList = props => {
 		rest
 	} = useOverrides(props, overrides, defaultProps);
 	return <Stack {...rest}>
-		{services.map(() => {
-			return <ServiceItemComp {...override("serviceItemComp")} />;
+		{services.map(service => {
+			return <ServiceItemComp {...override("serviceItemComp")} title={service.title} desc={service.desc} />;
 		})}
 		{children}
 	</Stack>;

@@ -18,7 +18,7 @@ const overrides = {
 			"height": "auto"
 		}
 	},
-	"text": {
+	"title": {
 		"kind": "Text",
 		"props": {
 			"as": "h3",
@@ -28,13 +28,13 @@ const overrides = {
 			"children": "Service Name"
 		}
 	},
-	"text1": {
+	"desc": {
 		"kind": "Text",
 		"props": {
 			"as": "p",
 			"margin": "20px 0 5px 0",
 			"quarkly-title": "ServiceItemDesp",
-			"children": "Service Description -- This space is 100% editable. Use it to introduce a team member, describe their work experience and role within the company. This is also a great place to highlight a team member's strong sides."
+			"children": "Loading..."
 		}
 	}
 };
@@ -45,11 +45,17 @@ const ServiceItemComp = props => {
 		children,
 		rest
 	} = useOverrides(props, overrides, defaultProps);
+	const titleProps = { ...override("title"),
+		children: props.title || override("title").children
+	};
+	const descProps = { ...override("desc"),
+		children: props.desc || override("desc").children
+	};
 	return <StackItem {...rest}>
 		<Override slot="StackItemContent" flex-direction="column" />
 		<Box {...override("box")}>
-			<Text {...override("text")} />
-			<Text {...override("text1")} />
+			<Text {...titleProps} />
+			<Text {...descProps} />
 		</Box>
 		{children}
 	</StackItem>;

@@ -3,7 +3,13 @@ import { useOverrides, Stack } from "@quarkly/components";
 import ServiceItemComp from "./ServiceItemComp";
 const defaultProps = {};
 const overrides = {};
-const products = [{}, {}];
+const products = [{
+	title: 'Birthday Foil Balloons',
+	desc: 'Foil balloons for birthday'
+}, {
+	title: '21st Birthday Balloon',
+	desc: 'Foil balloon for 21st birthday'
+}];
 
 const ProductsListComp = props => {
 	const {
@@ -12,8 +18,8 @@ const ProductsListComp = props => {
 		rest
 	} = useOverrides(props, overrides, defaultProps);
 	return <Stack {...rest}>
-		{products.map(() => {
-			return <ServiceItemComp {...override("serviceItemComp")} />;
+		{products.map(product => {
+			return <ServiceItemComp {...override("serviceItemComp")} title={product.title} desc={product.desc} />;
 		})}
 		{children}
 	</Stack>;
