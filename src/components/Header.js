@@ -57,8 +57,11 @@ const overrides = {
 		}
 	}
 };
-window.parent && window.parent.postMessage("HELLO FROM BALLOON STORE (window.parent)", "*");
-window.postMessage("HELLO FROM BALLOON STORE (window.postMessage)", "*");
+
+if (typeof window !== "undefined") {
+	window.parent && window.parent.postMessage("HELLO FROM BALLOON STORE (window.parent)", "*");
+	window.postMessage("HELLO FROM BALLOON STORE (window.postMessage)", "*");
+}
 
 const Header = props => {
 	const {
