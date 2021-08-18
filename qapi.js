@@ -7,8 +7,7 @@ export default {
 			"children": [
 				"60b3dbd28139c3001e127036",
 				"60b3dbd28139c3001e127038",
-				"60b3ec348139c3001e12704a",
-				"60b3ec69542aaa001f921759"
+				"60b3ec348139c3001e12704a"
 			]
 		},
 		"60b3dbd28139c3001e127036": {
@@ -30,18 +29,13 @@ export default {
 		"60b3ec348139c3001e12704a": {
 			"id": "60b3ec348139c3001e12704a",
 			"pageUrl": "products",
-			"name": "Products",
+			"name": "Services",
 			"seo": {
 				"title": "Balloon Store | Products",
 				"description": "Check out the list of best products for your events at the balloon store.",
 				"og:title": "Balloon Store | Products",
 				"og:description": "Check out the list of best products for your events at the balloon store."
 			}
-		},
-		"60b3ec69542aaa001f921759": {
-			"id": "60b3ec69542aaa001f921759",
-			"pageUrl": "index2",
-			"name": "Contact Us"
 		}
 	},
 	"mode": "production",

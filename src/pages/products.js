@@ -17,8 +17,8 @@ export default (() => {
 			<meta property={"og:description"} content={"Check out the list of best products for your events at the balloon store."} />
 			<link rel={"shortcut icon"} href={"https://uploads.quarkly.io/readme/cra/favicon-32x32.ico"} type={"image/x-icon"} />
 		</Helmet>
-		<Components.Header />
-		<Section sm-padding="40px 0" font="--base" color="--dark">
+		<Components.Header transition="all --transitionDuration-fastest ease-in 0.5s" />
+		<Section sm-padding="40px 0" font="--base" color="--dark" height="auto">
 			<Text
 				as="h1"
 				font="--headline1"
@@ -27,7 +27,7 @@ export default (() => {
 				margin="0 auto 5px auto"
 				text-align="center"
 			>
-				Our Products
+				Our Services
 			</Text>
 			<Text
 				as="p"
@@ -51,7 +51,7 @@ export default (() => {
 				/>
 			</Section>
 			<Section padding="32px 0 32px 0" sm-padding="40px 0" font="--base" color="--dark">
-				<Override slot="SectionContent" align-items="center" justify-content="center" />
+				<Override slot="SectionContent" align-items="center" justify-content="center" height="100% border-box" />
 				<Components.ProductStack margin="40px 0px -16px 0px">
 					<Override slot="productItem" width="292px">
 						<Override
@@ -66,7 +66,7 @@ export default (() => {
 				</Components.ProductStack>
 			</Section>
 		</Section>
-		<Components.Footer />
+		<Components.Footer position="static" transition="all --transitionDuration-fastest ease-in 0.5s" />
 		<Link
 			font={"--capture"}
 			font-size={"10px"}

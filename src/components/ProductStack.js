@@ -148,9 +148,6 @@ const ProductStack = props => {
 	}, [setProducts]);
 	return <Stack {...rest}>
 		{products.map(productObj => {
-			console.log({
-				productObj
-			});
 			return <ProductItem key={productObj.id} {...override("productItem")} product={{
 				imageSrc: productObj.product_img_link,
 				name: productObj.product_name,

@@ -1,6 +1,7 @@
 import React from "react";
 import { useOverrides, Override, Menu } from "@quarkly/components";
-import { Link, Section } from "@quarkly/widgets";
+import { Icon, Box, Section } from "@quarkly/widgets";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const defaultProps = {
 	"background-color": "--dark",
 	"text-align": "center",
@@ -42,15 +43,53 @@ const overrides = {
 			"padding": "6px 0px"
 		}
 	},
-	"link": {
-		"kind": "Link",
+	"box": {
+		"kind": "Box",
 		"props": {
-			"href": "mailto:hello@company.com",
-			"text-decoration-line": "none",
-			"variant": "--base",
-			"color": "--grey",
-			"hover-color": "--primary",
-			"children": "hello@company.com"
+			"align-self": "center",
+			"display": "flex"
+		}
+	},
+	"icon": {
+		"kind": "Icon",
+		"props": {
+			"category": "fa",
+			"icon": FaFacebookF,
+			"width": "48px",
+			"height": "48px",
+			"size": "24px",
+			"margin-right": "16px",
+			"background": "--color-primary",
+			"border-radius": "50%",
+			"align-self": "auto"
+		}
+	},
+	"icon1": {
+		"kind": "Icon",
+		"props": {
+			"category": "fa",
+			"icon": FaLinkedinIn,
+			"width": "48px",
+			"height": "48px",
+			"size": "24px",
+			"margin-right": "16px",
+			"background": "--color-primary",
+			"border-radius": "50%",
+			"align-self": "auto"
+		}
+	},
+	"icon2": {
+		"kind": "Icon",
+		"props": {
+			"category": "fa",
+			"icon": FaTwitter,
+			"width": "48px",
+			"height": "48px",
+			"size": "24px",
+			"margin-right": "16px",
+			"background": "--color-primary",
+			"border-radius": "50%",
+			"align-self": "auto"
 		}
 	}
 };
@@ -67,7 +106,11 @@ const Footer = props => {
 			<Override {...override("menuOverride1")} />
 			<Override {...override("menuOverride2")} />
 		</Menu>
-		<Link {...override("link")} />
+		<Box {...override("box")}>
+			<Icon {...override("icon")} />
+			<Icon {...override("icon1")} />
+			<Icon {...override("icon2")} />
+		</Box>
 		{children}
 	</Section>;
 };
